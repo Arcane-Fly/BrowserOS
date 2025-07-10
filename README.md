@@ -15,6 +15,9 @@
 <a href="https://bit.ly/browseros-windows">
   <img src="https://img.shields.io/badge/Download-Windows-0078D4?style=flat&logo=windows&logoColor=white" alt="Download for Windows (beta)" />
 </a>
+<a href="#linux-installation">
+  <img src="https://img.shields.io/badge/Download-Linux-FCC624?style=flat&logo=linux&logoColor=black" alt="Available for Linux" />
+</a>
 <br />
 
 <br />
@@ -33,6 +36,7 @@
 1. Download and install BrowserOS:
    - [macOS](https://bit.ly/nxtscape)
    - [Windows](https://cdn.browseros.com/win/BrowserOS-installer.zip)
+   - Linux: Build from source (see [Linux Installation](#linux-installation) below)
 2. Import your Chrome data (optional)
 3. Connect your AI provider (OpenAI, Anthropic, or local Ollama)
 4. Start automating!
@@ -102,6 +106,58 @@ Many loved Arc, but it was closed source. When they abandoned users, there was n
 <br>
 They're a search/ad company. Your browser history becomes their product. We keep everything local.
 </details>
+
+## Linux Installation
+
+BrowserOS now supports Linux! You can build it from source using our build system.
+
+### Prerequisites
+
+- Ubuntu 20.04+ / Debian 11+ / Fedora 35+ (or equivalent)
+- Python 3.8+
+- Git
+- Chromium source code (see [build instructions](docs/BUILD.md))
+
+### Quick Build
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Arcane-Fly/BrowserOS.git
+   cd BrowserOS
+   ```
+
+2. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Build packages:
+   ```bash
+   python build/build.py --package --chromium-src /path/to/chromium/src --arch x64
+   ```
+
+### Package Formats
+
+The build system creates multiple Linux package formats:
+
+- **Tarball** (`.tar.gz`): Universal Linux package, works on any distribution
+- **DEB package** (`.deb`): For Debian/Ubuntu systems with proper system integration
+- **AppImage** (planned): Portable application format
+
+### Installation
+
+**From Tarball:**
+```bash
+tar -xzf BrowserOS_*_linux.tar.gz
+cd BrowserOS
+./browseros
+```
+
+**From DEB package:**
+```bash
+sudo dpkg -i browseros_*.deb
+# Launch from applications menu or run 'browseros' in terminal
+```
 
 ## Contributing
 
