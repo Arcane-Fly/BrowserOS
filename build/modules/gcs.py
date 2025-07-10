@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 from typing import List, Optional
 from context import BuildContext
-from utils import log_info, log_error, log_success, log_warning, IS_WINDOWS, IS_MACOS, join_paths
+from utils import log_info, log_error, log_success, log_warning, IS_WINDOWS, IS_MACOS, IS_LINUX, join_paths
 
 # Try to import google-cloud-storage
 try:
@@ -106,7 +106,7 @@ def upload_to_gcs(ctx: BuildContext, file_paths: List[Path]) -> tuple[bool, List
 
 
 def upload_package_artifacts(ctx: BuildContext) -> tuple[bool, List[str]]:
-    """Upload package artifacts (DMG, ZIP, EXE) to GCS
+    """Upload package artifacts (DMG, ZIP, EXE, tar.gz, DEB) to GCS
     Returns: (success, list of GCS URIs)"""
     log_info("\n☁️  Preparing to upload package artifacts to GCS...")
     
@@ -124,6 +124,14 @@ def upload_package_artifacts(ctx: BuildContext) -> tuple[bool, List[str]]:
         if dist_dir.exists():
             artifacts.extend(dist_dir.glob("*.exe"))
             artifacts.extend(dist_dir.glob("*.zip"))
+    
+    else:
+        # Linux: Look for tar.gz, deb, and AppImage files
+        dist_dir = ctx.root_dir / "dist"
+        if dist_dir.exists():
+            artifacts.extend(dist_dir.glob("*.tar.gz"))
+            artifacts.extend(dist_dir.glob("*.deb"))
+            artifacts.extend(dist_dir.glob("*.AppImage"))
     
     if not artifacts:
         log_info("No package artifacts found to upload")

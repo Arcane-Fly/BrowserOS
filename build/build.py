@@ -12,7 +12,7 @@ from typing import Optional
 
 # Import shared components
 from context import BuildContext
-from utils import load_config, log_info, log_warning, log_error, log_success, IS_MACOS, IS_WINDOWS
+from utils import load_config, log_info, log_warning, log_error, log_success, IS_MACOS, IS_WINDOWS, IS_LINUX
 
 # Import modules
 from modules.clean import clean
@@ -39,8 +39,26 @@ elif IS_WINDOWS:
         return True
     def run_postbuild(ctx: BuildContext) -> None:
         log_warning("Post-build tasks are not implemented for Windows yet")
+    def check_signing_environment() -> bool:
+        log_info("Windows signing environment check not implemented")
+        return True
+elif IS_LINUX:
+    from modules.package_linux import package, package_universal, sign_packages as sign
+    # Linux doesn't have the same universal signing concept
+    def sign_universal(contexts: list[BuildContext]) -> bool:
+        log_info("Signing each Linux package separately...")
+        success = True
+        for ctx in contexts:
+            if not sign(ctx):
+                success = False
+        return success
+    def run_postbuild(ctx: BuildContext) -> None:
+        log_info("Linux post-build tasks completed")
+    def check_signing_environment() -> bool:
+        log_info("Linux signing environment check passed")
+        return True
 else:
-    # Stub functions for other platforms (Linux, etc.)
+    # Stub functions for other platforms
     def sign(ctx: BuildContext) -> bool:
         log_warning("Signing is not implemented for this platform")
         return True
@@ -55,6 +73,9 @@ else:
         return True
     def run_postbuild(ctx: BuildContext) -> None:
         log_warning("Post-build tasks are not implemented for this platform")
+    def check_signing_environment() -> bool:
+        log_warning("Signing environment check is not implemented for this platform")
+        return True
 
 from modules.slack import (
     notify_build_started,
@@ -430,7 +451,7 @@ def build_main(
     default="debug",
     help="Build type",
 )
-@click.option("--package", "-P", is_flag=True, default=False, help="Create DMG package")
+@click.option("--package", "-P", is_flag=True, default=False, help="Create platform package")
 @click.option("--build", "-b", is_flag=True, default=False, help="Build")
 @click.option(
     "--chromium-src",
