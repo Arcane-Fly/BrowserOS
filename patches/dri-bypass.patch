@@ -1,0 +1,23 @@
+--- a/build/config/linux/dri/BUILD.gn
++++ b/build/config/linux/dri/BUILD.gn
+@@ -6,10 +6,8 @@
+ # We don't have a way to specify that a config can't be used in certain
+ # configurations, so we just make this a no-op when not building with DRI.
+ if (use_dri) {
+-  pkg_config_script = "//build/config/linux/pkg-config.py"
+-  dri_driver_dir = exec_script(pkg_config_script,
+-                              [ "--dridriverdir" ],
+-                              "string")
++  # Hardcode DRI driver directory to bypass pkg-config
++  dri_driver_dir = "/usr/lib/x86_64-linux-gnu/dri"
+ 
+   config("dri_driver_dir") {
+     defines = [
+       "DRI_DRIVER_DIR=\"${dri_driver_dir}\"",
+     ]
+   }
+ } else {
+   group("dri_driver_dir") {
+     # Empty target when not building with DRI.
+   }
+ }

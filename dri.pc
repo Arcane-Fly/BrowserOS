@@ -1,0 +1,12 @@
+# DRI package configuration
+prefix=/usr
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+dridriverdir=/usr/lib/x86_64-linux-gnu/dri
+
+Name: dri
+Description: Direct Rendering Infrastructure
+Version: 1.0.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -ldrm
