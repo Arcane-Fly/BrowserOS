@@ -17,7 +17,7 @@
       <pubDate>Wed, 09 Jul 2025 13:39:48 -0700</pubDate>
       <link>https://nxtscape.ai</link>
       <enclosure
-        url="http://cdn.browseros.com/dmg/BrowserOS_v0.11.1_x64.dmg"
+        url="http://cdn.browseros.com/dmg/EyeBrowserOS_v0.11.1_x64.dmg"
         sparkle:edSignature="gXrzzSVFS27aHLbnb21shwdOA/jGmWxkmECBR8pKmdJlkyhYUylD7XdiIZOBiNVn7J3WLMeND2CKIEwwwQL9CQ==" 
         length="136112089"
         type="application/octet-stream" />
@@ -26,7 +26,7 @@
     <item>
       <title>Nxtscape - 0.10.0</title>
       <description sparkle:format="plain-text">
-- BrowserOS now supports Windows. Check our GitHub page for the Windows installer.
+- EyeBrowserOS now supports Windows. Check our GitHub page for the Windows installer.
 - Added a new easy way to report bugs and request features from the browser.
       </description>
       <sparkle:version>7178.69</sparkle:version>
@@ -34,7 +34,7 @@
       <pubDate>Sun, 07 Jul 2025 00:00:00 -0700</pubDate>
       <link>https://nxtscape.ai</link>
       <enclosure
-        url="http://cdn.browseros.com/dmg/BrowserOS_v0.10.0_x64.dmg"
+        url="http://cdn.browseros.com/dmg/EyeBrowserOS_v0.10.0_x64.dmg"
         sparkle:edSignature="6+ORfhZsUC0ICN6p7DAvkjgEYakRbHR+23/T0Xg99PGyfr4M9v3L510+/AYRiLIyTrG+9UoxsAWEEO3F2FyuDQ=="
         length="135988676"
         type="application/octet-stream" />
@@ -49,7 +49,7 @@
       <pubDate>Sat, 05 Jul 2025 09:17:24 -0700</pubDate>
       <link>https://nxtscape.ai</link>
       <enclosure
-        url="http://cdn.browseros.com/dmg/BrowserOS_v0.9.1_x64.dmg"
+        url="http://cdn.browseros.com/dmg/EyeBrowserOS_v0.9.1_x64.dmg"
         sparkle:edSignature="smb5fqgAw2uYFPckukJQtQfHYWSG+UVpuzNm+2JPxTbmdErfcJeOc3S9+AjYMqvP1/R9B6K/PdGcYb19A+9BAw=="
         length="135870804"
         type="application/octet-stream" />
@@ -65,7 +65,7 @@
       <pubDate>Thu, 03 Jul 2025 10:29:43 -0700</pubDate>
       <link>https://nxtscape.ai</link>
       <enclosure
-        url="http://cdn.browseros.com/dmg/BrowserOS_v0.9.0_x64.dmg"
+        url="http://cdn.browseros.com/dmg/EyeBrowserOS_v0.9.0_x64.dmg"
         sparkle:edSignature="KF7j6V9/IdNuGHWJoMpf4ZhSC6EJB5bnwH0rP8uWEzxBwsnbgMpdBP3VwoR+xF4pt90hQTYs/3SLra2KXdE0DA=="
         length="135898092"
         type="application/octet-stream" />
@@ -83,7 +83,7 @@
       <pubDate>Wed, 02 Jul 2025 14:20:34 -0700</pubDate>
       <link>https://nxtscape.ai</link>
       <enclosure
-        url="http://cdn.browseros.com/dmg/BrowserOS_v0.8.0_x64.dmg"
+        url="http://cdn.browseros.com/dmg/EyeBrowserOS_v0.8.0_x64.dmg"
         sparkle:edSignature="Uo7OjzJWFCHzjNOLFAODhELUUX1DE8UeOEP6+rXtGo7aSgPyQOvsk427crKsv6QHIBA+o5oCiS0IA4XofMkzCQ=="
         length="136446289"
         type="application/octet-stream" />

@@ -8,10 +8,18 @@ import sys
 from pathlib import Path
 from dataclasses import dataclass
 from utils import (
-    log_info, log_error, log_success, log_warning,
-    get_platform, get_platform_arch, get_executable_extension,
-    get_app_extension, normalize_path, join_paths,
-    IS_WINDOWS, IS_MACOS
+    log_info,
+    log_error,
+    log_success,
+    log_warning,
+    get_platform,
+    get_platform_arch,
+    get_executable_extension,
+    get_app_extension,
+    normalize_path,
+    join_paths,
+    IS_WINDOWS,
+    IS_MACOS,
 )
 
 
@@ -36,7 +44,7 @@ class BuildContext:
     # App names - will be set based on platform
     CHROMIUM_APP_NAME: str = ""
     NXTSCAPE_APP_NAME: str = ""
-    NXTSCAPE_APP_BASE_NAME: str = "BrowserOS"  # Base name without extension
+    NXTSCAPE_APP_BASE_NAME: str = "EyeBrowserOS"  # Base name without extension
 
     # Third party
     SPARKLE_VERSION: str = "2.7.0"
@@ -46,18 +54,20 @@ class BuildContext:
         # Set platform-specific defaults
         if not self.architecture:
             self.architecture = get_platform_arch()
-        
+
         # Set platform-specific app names
         if IS_WINDOWS:
             self.CHROMIUM_APP_NAME = f"chrome{get_executable_extension()}"
-            self.NXTSCAPE_APP_NAME = f"{self.NXTSCAPE_APP_BASE_NAME}{get_executable_extension()}"
+            self.NXTSCAPE_APP_NAME = (
+                f"{self.NXTSCAPE_APP_BASE_NAME}{get_executable_extension()}"
+            )
         elif IS_MACOS:
             self.CHROMIUM_APP_NAME = "Chromium.app"
             self.NXTSCAPE_APP_NAME = f"{self.NXTSCAPE_APP_BASE_NAME}.app"
         else:
             self.CHROMIUM_APP_NAME = "chrome"
             self.NXTSCAPE_APP_NAME = self.NXTSCAPE_APP_BASE_NAME.lower()
-        
+
         # Set architecture-specific output directory with platform separator
         if IS_WINDOWS:
             self.out_dir = f"out\\Default_{self.architecture}"
@@ -80,7 +90,9 @@ class BuildContext:
 
         if not self.nxtscape_version:
             # Read from NXTSCAPE_VERSION file
-            version_file = join_paths(self.root_dir, "build", "config", "NXTSCAPE_VERSION")
+            version_file = join_paths(
+                self.root_dir, "build", "config", "NXTSCAPE_VERSION"
+            )
             if version_file.exists():
                 self.nxtscape_version = version_file.read_text().strip()
 
@@ -118,7 +130,9 @@ class BuildContext:
     def get_gn_flags_file(self) -> Path:
         """Get GN flags file for current build type"""
         platform = get_platform()
-        return join_paths(self.get_gn_config_dir(), f"flags.{platform}.{self.build_type}.gn")
+        return join_paths(
+            self.get_gn_config_dir(), f"flags.{platform}.{self.build_type}.gn"
+        )
 
     def get_copy_resources_config(self) -> Path:
         """Get copy resources configuration file"""
@@ -202,11 +216,11 @@ class BuildContext:
             if signed:
                 return f"{self.NXTSCAPE_APP_BASE_NAME}_{self.nxtscape_chromium_version}_{self.architecture}_signed.dmg"
             return f"{self.NXTSCAPE_APP_BASE_NAME}_{self.nxtscape_chromium_version}_{self.architecture}.dmg"
-    
+
     def get_nxtscape_version(self) -> str:
         """Get Nxtscape version string"""
         return self.nxtscape_chromium_version
-    
+
     def get_app_base_name(self) -> str:
         """Get app base name without extension"""
         return self.NXTSCAPE_APP_BASE_NAME
@@ -219,7 +233,7 @@ class BuildContext:
     # Bundle identifiers
     def get_bundle_identifier(self) -> str:
         """Get main bundle identifier"""
-        return "com.browseros.BrowserOS"
+        return "com.browseros.EyeBrowserOS"
 
     def get_base_identifier(self) -> str:
         """Get base identifier for components"""

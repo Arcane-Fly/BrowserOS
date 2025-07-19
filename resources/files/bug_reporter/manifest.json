@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "BrowserOS Feedback",
+  "name": "EyeBrowserOS Feedback",
   "version": "0.9.1",
   "browser_version": "137.0.7178.69",
   "description": "Submit bug reports and feature requests for your browser",

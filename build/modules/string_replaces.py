@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-String replacement module for BrowserOS build system
+String replacement module for EyeBrowserOS build system
 """
 
 import re
@@ -14,17 +14,17 @@ from utils import log_info, log_success, log_error, log_warning
 branding_replacements = [
     (
         r"The Chromium Authors. All rights reserved.",
-        r"The BrowserOS Authors. All rights reserved.",
+        r"The EyeBrowserOS Authors. All rights reserved.",
     ),
     (
         r"Google LLC. All rights reserved.",
-        r"The BrowserOS Authors. All rights reserved.",
+        r"The EyeBrowserOS Authors. All rights reserved.",
     ),
-    (r"The Chromium Authors", r"BrowserOS Software Inc"),
-    (r"Google Chrome", r"BrowserOS"),
-    (r"(Google)(?! Play)", r"BrowserOS"),
-    (r"Chromium", r"BrowserOS"),
-    (r"Chrome", r"BrowserOS"),
+    (r"The Chromium Authors", r"EyeBrowserOS Software Inc"),
+    (r"Google Chrome", r"EyeBrowserOS"),
+    (r"(Google)(?! Play)", r"EyeBrowserOS"),
+    (r"Chromium", r"EyeBrowserOS"),
+    (r"Chrome", r"EyeBrowserOS"),
 ]
 
 # List of files to apply replacements to
@@ -83,4 +83,3 @@ def apply_string_replacements(ctx: BuildContext) -> bool:
         log_error("String replacements failed")
 
     return success
-

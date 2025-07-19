@@ -1,6 +1,7 @@
 <div align="center">
 
-# 
+#
+
 <img src="https://cdn.browseros.com/resources/banner.png" alt="backed-by-yc" >
 <strong>(previously Nxtscape)</strong>
 
@@ -25,7 +26,7 @@
 
 </div>
 
-🌐 BrowserOS is an open-source agentic browser that runs AI agents locally. **Your privacy-first alternative to Perplexity Comet**.
+🌐 EyeBrowserOS is an open-source agentic browser that runs AI agents locally. **Your privacy-first alternative to Perplexity Comet**.
 
 🔒 Privacy first - use your own API keys or run local models with Ollama. Your data stays on your computer.
 
@@ -33,15 +34,15 @@
 
 ## Quick start
 
-1. Download and install BrowserOS:
+1. Download and install EyeBrowserOS:
    - [macOS](https://bit.ly/nxtscape)
-   - [Windows](https://cdn.browseros.com/win/BrowserOS-installer.zip)
+   - [Windows](https://cdn.browseros.com/win/EyeBrowserOS-installer.zip)
    - Linux: Build from source (see [Linux Installation](#linux-installation) below)
 2. Import your Chrome data (optional)
 3. Connect your AI provider (OpenAI, Anthropic, or local Ollama)
 4. Start automating!
 
-## What makes BrowserOS special
+## What makes EyeBrowserOS special
 
 <div align="center">
 <img src="https://cdn.browseros.com/resources/usecase.png" alt="example-use-cases" width="85%">
@@ -59,16 +60,19 @@
 ## Demos
 
 ### 🤖 AI Agents in Action ([watch video](https://storage.googleapis.com/felafax-public/nxtscape/nxtscape-agent-demo.mp4))
+
 <div align="center">
 <img src="resources/media/nxtscape-agent.gif" alt="AI Agents in Action" width="80%">
 </div>
 
 ### 💬 Local AI Chat ([watch video](https://storage.googleapis.com/felafax-public/nxtscape/nxtscape-chat.mp4))
+
 <div align="center">
 <img src="resources/media/nxtscape-chat.gif" alt="Local AI Chat" width="80%">
 </div>
 
 ### ⚡ Productivity Tools ([watch video](https://storage.googleapis.com/felafax-public/nxtscape/nxtscape-productivity.mp4))
+
 <div align="center">
 <img src="resources/media/nxtscape-productivity.gif" alt="Productivity" width="80%">
 </div>
@@ -77,7 +81,7 @@
 
 For the first time since Netscape in 1994, it feels like we can reimagine browsers from scratch. We saw how Cursor gave developers a 10x productivity boost, yet browsers feel stuck in the past.
 
-You probably have 70+ tabs open right now. You're constantly fighting your browser instead of it helping you. Simple tasks like "order Tide Pods from my Amazon order history" should just work with AI agents. 
+You probably have 70+ tabs open right now. You're constantly fighting your browser instead of it helping you. Simple tasks like "order Tide Pods from my Amazon order history" should just work with AI agents.
 
 We believe AI agents should automate your work locally and securely, not send your data to some search or ad company.
 
@@ -109,7 +113,7 @@ They're a search/ad company. Your browser history becomes their product. We keep
 
 ## Linux Installation
 
-BrowserOS now supports Linux! You can build it from source using our build system.
+EyeBrowserOS now supports Linux! You can build it from source using our build system.
 
 ### Prerequisites
 
@@ -121,17 +125,20 @@ BrowserOS now supports Linux! You can build it from source using our build syste
 ### Quick Build
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/Arcane-Fly/BrowserOS.git
-   cd BrowserOS
+   git clone https://github.com/Arcane-Fly/EyeBrowserOS.git
+   cd EyeBrowserOS
    ```
 
 2. Install Python dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
 
 3. Build packages:
+
    ```bash
    python build/build.py --package --chromium-src /path/to/chromium/src --arch x64
    ```
@@ -147,13 +154,15 @@ The build system creates multiple Linux package formats:
 ### Installation
 
 **From Tarball:**
+
 ```bash
-tar -xzf BrowserOS_*_linux.tar.gz
-cd BrowserOS
+tar -xzf EyeBrowserOS_*_linux.tar.gz
+cd EyeBrowserOS
 ./browseros
 ```
 
 **From DEB package:**
+
 ```bash
 sudo dpkg -i browseros_*.deb
 # Launch from applications menu or run 'browseros' in terminal
@@ -161,7 +170,7 @@ sudo dpkg -i browseros_*.deb
 
 ## Contributing
 
-We'd love your help making BrowserOS better!
+We'd love your help making EyeBrowserOS better!
 
 - 🐛 [Report bugs](https://github.com/nxtscape/nxtscape/issues)
 - 💡 [Suggest features](https://dub.sh/nxtscape-feature-request)
@@ -170,7 +179,7 @@ We'd love your help making BrowserOS better!
 
 ## License
 
-BrowserOS is open source under the [AGPL-3.0 license](LICENSE).
+EyeBrowserOS is open source under the [AGPL-3.0 license](LICENSE).
 
 ---
 

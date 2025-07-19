@@ -486,7 +486,7 @@ index 0000000000000..28e18b5f69f95
 +      <div class="provider-header-content">
 +        <h1 class="provider-header-title">AI Provider Settings</h1>
 +        <div class="provider-header-subtitle">
-+          Configure your preferred AI provider and model settings. Your selection will be used across all BrowserOS AI features.
++          Configure your preferred AI provider and model settings. Your selection will be used across all EyeBrowserOS AI features.
 +        </div>
 +      </div>
 +      <div class="provider-selector">
@@ -494,7 +494,7 @@ index 0000000000000..28e18b5f69f95
 +        <select id="defaultProvider" class="md-select"
 +                value="[[prefs.nxtscape.default_provider.value]]"
 +                on-change="onDefaultProviderChange_">
-+          <option value="nxtscape">BrowserOS</option>
++          <option value="nxtscape">EyeBrowserOS</option>
 +          <option value="openai">OpenAI</option>
 +          <option value="anthropic">Anthropic</option>
 +          <option value="gemini">Gemini</option>
@@ -516,7 +516,7 @@ index 0000000000000..28e18b5f69f95
 +    </div>
 +
 +    <div class="provider-cards-container">
-+      <!-- BrowserOS Card -->
++      <!-- EyeBrowserOS Card -->
 +      <div class="provider-card" id="nxtscapeSection" 
 +           class$="[[getProviderCardClass_('nxtscape', prefs.nxtscape.default_provider.value)]]">
 +        <div class="provider-card-header">
@@ -524,13 +524,13 @@ index 0000000000000..28e18b5f69f95
 +            <span>N</span>
 +          </div>
 +          <div class="provider-card-info">
-+            <h3 class="provider-card-name">BrowserOS AI</h3>
++            <h3 class="provider-card-name">EyeBrowserOS AI</h3>
 +            <div class="provider-card-status">
 +              <span class="status-dot"></span>
 +              <span>[[getProviderStatus_('nxtscape', prefs.nxtscape.default_provider.value)]]</span>
 +            </div>
 +            <div class="provider-tagline">
-+              Powered by BrowserOS's AI service.
++              Powered by EyeBrowserOS's AI service.
 +            </div>
 +          </div>
 +        </div>
@@ -542,7 +542,7 @@ index 0000000000000..28e18b5f69f95
 +                    on-change="onNxtscapeModelChange_">
 +              <option value="default">Default</option>
 +            </select>
-+            <div class="form-helper">Select the model for BrowserOS AI operations</div>
++            <div class="form-helper">Select the model for EyeBrowserOS AI operations</div>
 +          </div>
 +        </div>
 +      </div>
@@ -765,7 +765,7 @@ index 0000000000000..28e18b5f69f95
 +OLLAMA_ORIGINS="*" ollama serve</code>
 +            </div>
 +            <div class="instructions-note">
-+              Note: Set <code>OLLAMA_ORIGINS</code> to allow BrowserOS to access your Ollama server.
++              Note: Set <code>OLLAMA_ORIGINS</code> to allow EyeBrowserOS to access your Ollama server.
 +            </div>
 +          </div>
 +        </div>
@@ -1059,7 +1059,7 @@ index 2458ecb3791b0..275e8eafe33a2 100644
    // Root pages.
    r.BASIC = new Route('/');
    r.ABOUT = new Route('/help', loadTimeData.getString('aboutPageTitle'));
-+  r.NXTSCAPE = new Route('/browseros', 'BrowserOS Settings');
++  r.NXTSCAPE = new Route('/browseros', 'EyeBrowserOS Settings');
  
    r.SEARCH = r.BASIC.createSection(
        '/search', 'search', loadTimeData.getString('searchPageTitle'));
@@ -1159,7 +1159,7 @@ index 79aad7032abc7..70651dd5e15c8 100644
 +        <a role="menuitem" id="nxtscape-menu" href="/browseros"
 +            class="cr-nav-menu-item">
 +          <cr-icon icon="[[aiPageIcon_]]"></cr-icon>
-+          BrowserOS
++          EyeBrowserOS
 +          <cr-ripple></cr-ripple>
 +        </a>
          <a role="menuitem" id="autofill" href="/autofill"
